@@ -74,14 +74,15 @@ class HomeLayout extends Component {
                 <ul>
                   {this.state.items.map((item) => {
                     return (
-                      <li key={item.id}>
-                        <h3>{item.id}</h3>
-                        <p>{item.year} build with {item.agency}
-                        <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
-                        <div style={{backgroundImage: 'url(images/' + `${item.img}` + '/logo.png)'}}>
-                          <img src={`images/${item.img}/desktop.jpg`}/>
-                        </div>
-                        </p>
+                      <li key={item.id} className='port-item'>
+                        <a className="port-inner" style={{ backgroundColor: `${item.colour}` }}>
+                          <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
+                          <div className='item-front'>
+                            <img src={`images/${item.img}/desktop.jpg`}/>
+
+                            <h3>{item.id}</h3>
+                          </div>
+                        </a>
                       </li>
                     )
                   })}
