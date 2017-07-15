@@ -710,22 +710,22 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        1px !default;
-$card-border-radius:       $border-radius !default;
-$card-border-color:        rgba($black,.125) !default;
-$card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:              $gray-lightest !default;
-$card-bg:                  $white !default;
+$card-border-width:        0;
+$card-border-radius:       0;
+$card-border-color:        $white;
+$card-border-radius-inner: 0;
+$card-cap-bg:              inherit;
+$card-bg:                  inherit;
 
 $card-link-hover-color:    $white !default;
 
 $card-img-overlay-padding: 1.25rem !default;
 
-$card-deck-margin:          ($grid-gutter-width-base / 2) !default;
+$card-deck-margin:          0;
 
 $card-columns-count:        3 !default;
-$card-columns-gap:          1.25rem !default;
-$card-columns-margin:       $card-spacer-y !default;
+$card-columns-gap:          0;
+$card-columns-margin:       0;
 
 
 // Tooltips

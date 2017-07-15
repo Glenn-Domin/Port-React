@@ -69,25 +69,26 @@ class HomeLayout extends Component {
                   <button>Add Item</button>
                 </form>
           </section>
-          <section className='display-item'>
-              <div className="wrapper">
-                <ul>
-                  {this.state.items.map((item) => {
-                    return (
-                      <li key={item.id} className='port-item'>
-                        <a className="port-inner" style={{ backgroundColor: `${item.colour}` }}>
-                          <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
-                          <div className='item-front'>
-                            <img src={`images/${item.img}/desktop.jpg`}/>
-
-                            <h3>{item.id}</h3>
-                          </div>
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+          <section className='row'>
+              {this.state.items.map((item) => {
+                return (
+                  <div key={item.id} className="port-item col col-sm-4 px-0">
+                    <a className='port-inner card' style={{ backgroundColor: `${item.colour}` }}>
+                      <div className='port-front'>
+                        <button onClick={() => this.removeItem(item.id)} style={{ display: 'none' }}>Remove Item</button>
+                        <img src={`images/${item.img}/desktop.jpg`}/>
+                        <div className='card-block'>
+                          <h4 className='card-title'>{item.id}</h4>
+                        </div>
+                      </div>
+                      <div className='port-back card-block'>
+                        <h4 className='card-title'>{item.id}</h4>
+                        <p className='card-text'>{item.year} - {item.agency}</p>
+                      </div>
+                    </a>
+                  </div>
+                )
+              })}
           </section>
         </div>
       </div>
