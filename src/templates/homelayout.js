@@ -5,8 +5,12 @@ class HomeLayout extends Component {
   constructor() {
     super();
     this.state = {
-      currentItem: '',
-      username: '',
+      name: '',
+      agency: '',
+      colour: '',
+      imgdir: '',
+      tags: '',
+      year: '',
       items: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -21,17 +25,21 @@ class HomeLayout extends Component {
     e.preventDefault();
     const itemsRef = firebase.database().ref('items');
     const item = {
-      id: this.state.name,
+      name  : this.state.name,
       agency: this.state.agency,
       colour: this.state.colour,
-      imgdir: this.state.img,
+      imgdir: this.state.imgdir,
       tags  : this.state.tags,
       year  : this.state.year
     }
     itemsRef.push(item);
     this.setState({
-      currentItem: '',
-      username: ''
+      name: '',
+      agency: '',
+      colour: '',
+      imgdir: '',
+      tags: '',
+      year: ''
     });
   }
   componentDidMount() {
@@ -41,10 +49,11 @@ class HomeLayout extends Component {
       let newState = [];
       for (let item in items) {
         newState.push({
-          id: item,
+          id:     item,
+          name:   items[item].name,
           agency: items[item].agency,
           year:   items[item].year,
-          img:    items[item].imgdir,
+          imgdir: items[item].imgdir,
           colour: items[item].colour,
           tags:   items[item].tags
         });
@@ -69,12 +78,12 @@ class HomeLayout extends Component {
         <div className='container'>
           <section className='add-item'>
             <form onSubmit={this.handleSubmit}>
-              <input type="text" name="username" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
-              <input type="text" name="username" placeholder="Agency" onChange={this.handleChange} value={this.state.agency} />
-              <input type="text" name="currentItem" placeholder="Colour" onChange={this.handleChange} value={this.state.colour} />
-              <input type="text" name="currentItem" placeholder="Imgdir" onChange={this.handleChange} value={this.state.img} />
-              <input type="text" name="currentItem" placeholder="Tags" onChange={this.handleChange} value={this.state.tags} />
-              <input type="text" name="currentItem" placeholder="Year" onChange={this.handleChange} value={this.state.year} />
+              <input type="text" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
+              <input type="text" name="agency" placeholder="Agency" onChange={this.handleChange} value={this.state.agency} />
+              <input type="text" name="colour" placeholder="Colour" onChange={this.handleChange} value={this.state.colour} />
+              <input type="text" name="imgdir" placeholder="Imgdir" onChange={this.handleChange} value={this.state.imgdir} />
+              <input type="text" name="tags" placeholder="Tags" onChange={this.handleChange} value={this.state.tags} />
+              <input type="text" name="year" placeholder="Year" onChange={this.handleChange} value={this.state.year} />
               <button>Add Item</button>
             </form>
           </section>
@@ -84,12 +93,12 @@ class HomeLayout extends Component {
                   <div key={item.id} className="card-flip col col-sm-4 px-0">
                     <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                       <div className='card-front'>
-                        <button onClick={() => this.removeItem(item.id)} style={{ display: 'none' }}>Remove Item</button>
-                        <img src={`images/${item.img}/desktop.jpg`}/>
-                        <div className='card-footer'>{item.id}</div>
+                        <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
+                        <img src={`images/${item.imgdir}/desktop.jpg`}/>
+                        <div className='card-footer'>{item.name}</div>
                       </div>
                       <div className='card-back card-block'>
-                        <h4 className='card-title'>{item.id}</h4>
+                        <h4 className='card-title'>{item.name}</h4>
                         <p className='card-subtitle'>{item.year} - {item.agency} development</p>
                       </div>
                     </a>
