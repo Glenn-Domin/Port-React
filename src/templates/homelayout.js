@@ -21,8 +21,12 @@ class HomeLayout extends Component {
     e.preventDefault();
     const itemsRef = firebase.database().ref('items');
     const item = {
-      title: this.state.currentItem,
-      user: this.state.username
+      id: this.state.name,
+      agency: this.state.agency,
+      colour: this.state.colour,
+      imgdir: this.state.img,
+      tags  : this.state.tags,
+      year  : this.state.year
     }
     itemsRef.push(item);
     this.setState({
@@ -41,7 +45,8 @@ class HomeLayout extends Component {
           agency: items[item].agency,
           year:   items[item].year,
           img:    items[item].imgdir,
-          colour: items[item].colour
+          colour: items[item].colour,
+          tags:   items[item].tags
         });
       }
       this.setState({
@@ -63,27 +68,29 @@ class HomeLayout extends Component {
         </header>
         <div className='container'>
           <section className='add-item'>
-                <form onSubmit={this.handleSubmit}>
-                  <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
-                  <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
-                  <button>Add Item</button>
-                </form>
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" name="username" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
+              <input type="text" name="username" placeholder="Agency" onChange={this.handleChange} value={this.state.agency} />
+              <input type="text" name="currentItem" placeholder="Colour" onChange={this.handleChange} value={this.state.colour} />
+              <input type="text" name="currentItem" placeholder="Imgdir" onChange={this.handleChange} value={this.state.img} />
+              <input type="text" name="currentItem" placeholder="Tags" onChange={this.handleChange} value={this.state.tags} />
+              <input type="text" name="currentItem" placeholder="Year" onChange={this.handleChange} value={this.state.year} />
+              <button>Add Item</button>
+            </form>
           </section>
           <section className='row'>
               {this.state.items.map((item) => {
                 return (
-                  <div key={item.id} className="port-item col col-sm-4 px-0">
-                    <a className='port-inner card' style={{ backgroundColor: `${item.colour}` }}>
-                      <div className='port-front'>
+                  <div key={item.id} className="card-flip col col-sm-4 px-0">
+                    <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
+                      <div className='card-front'>
                         <button onClick={() => this.removeItem(item.id)} style={{ display: 'none' }}>Remove Item</button>
                         <img src={`images/${item.img}/desktop.jpg`}/>
-                        <div className='card-block'>
-                          <h4 className='card-title'>{item.id}</h4>
-                        </div>
+                        <div className='card-footer'>{item.id}</div>
                       </div>
-                      <div className='port-back card-block'>
+                      <div className='card-back card-block'>
                         <h4 className='card-title'>{item.id}</h4>
-                        <p className='card-text'>{item.year} - {item.agency}</p>
+                        <p className='card-subtitle'>{item.year} - {item.agency} development</p>
                       </div>
                     </a>
                   </div>

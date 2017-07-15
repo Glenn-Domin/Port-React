@@ -727,6 +727,11 @@ $card-columns-count:        3 !default;
 $card-columns-gap:          0;
 $card-columns-margin:       0;
 
+// Cards - Custom
+$card-title-sm-spacer-x:       $card-spacer-x;
+$card-title-sm-spacer-y:       $card-spacer-y / 2;
+$card-title-sm-weight:         $font-weight-normal;
+$card-title-sm-font-size:      $font-size-base;
 
 // Tooltips
 
