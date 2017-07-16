@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../actions/firebase';
+import _ from 'lodash';
 
 class HomeLayout extends Component {
   constructor() {
@@ -68,6 +69,7 @@ class HomeLayout extends Component {
     itemRef.remove();
   }
   render() {
+    let tagsList = [];
     return (
       <div className='app'>
         <header>
@@ -88,7 +90,20 @@ class HomeLayout extends Component {
             </form>
           </section>
           <section className='row'>
+            <p>{
+                tagsList = _.concat(tagsList),
+                tagsList = _.union(tagsList),
+//                tagsList = [ ...new Set(tagsList) ],
+                console.log(tagsList),
+                tagsList
+                }</p>
               {this.state.items.map((item) => {
+
+                let itemTags = item.tags.split(', ');
+                tagsList.push(itemTags);
+
+
+
                 return (
                   <div key={item.id} className="card-flip col col-sm-4 px-0">
                     <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
@@ -100,6 +115,7 @@ class HomeLayout extends Component {
                       <div className='card-back card-block'>
                         <h4 className='card-title'>{item.name}</h4>
                         <p className='card-subtitle'>{item.year} - {item.agency} development</p>
+                        <p className='card-text'>{item.tags}</p>
                       </div>
                     </a>
                   </div>

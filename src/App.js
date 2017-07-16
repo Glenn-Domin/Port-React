@@ -8,9 +8,9 @@ import { Container } from 'reactstrap';
 import reducers from './reducers';
 import TopNavbar from './components/navbar';
 import HomeLayout from './templates/homelayout';
-import PostsLayout from './templates/postslayout';
-import PostsNew from './components/posts_new';
-import PostsShow from './components/posts_show';
+//import PostsLayout from './templates/postslayout';
+//import PostsNew from './components/posts_new';
+//import PostsShow from './components/posts_show';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -22,9 +22,6 @@ class App extends Component {
         <Provider store={createStoreWithMiddleware(reducers)}>
           <BrowserRouter>
             <Switch>
-              <Route exact path='/posts/new' component={PostsNew} />
-              <Route exact path='/posts' component={PostsLayout} />
-              <Route exact path='/post/:id' component={PostsShow} />
               <Route exact path='/' component={HomeLayout} />
             </Switch>
           </BrowserRouter>
