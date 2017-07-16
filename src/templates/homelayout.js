@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../actions/firebase';
-import _ from 'lodash';
+//import _ from 'lodash';
 
 class HomeLayout extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class HomeLayout extends Component {
       colour: '',
       imgdir: '',
       tags: '',
-      tagsList: [''],
+      tagsList: [],
       year: '',
       items: []
     }
@@ -75,7 +75,12 @@ class HomeLayout extends Component {
     itemRef.remove();
   }
   render() {
-//    let tagsList = [];
+
+    let tagsList = this.state.tagsList.map(tagsItem =>
+    <div key={tagsItem.id} className="station">
+      {tagsItem}
+    </div>
+);
 //    tagsList = [].concat(...tagsList);
 //    console.log(tagsList);
     return (
@@ -97,30 +102,31 @@ class HomeLayout extends Component {
               <button>Add Item</button>
             </form>
           </section>
-          <div>{this.state.tagsList}{console.log(this.state.tagsList)}</div>
+          <div>{
+              tagsList
+            }{console.log(this.state.tagsList)}</div>
           <section className='row'>
-
-              {this.state.items.map((item) => {
+            {this.state.items.map((item) => {
 //                let itemTags = item.tags.split(', ');
 //                tagsList.push(itemTags);
 
-                return (
-                  <div key={item.id} className="card-flip col col-sm-4 px-0">
-                    <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
-                      <div className='card-front'>
-                        <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
-                        <img src={`images/${item.imgdir}/desktop.jpg`}/>
-                        <div className='card-footer'>{item.name}</div>
-                      </div>
-                      <div className='card-back card-block'>
-                        <h4 className='card-title'>{item.name}</h4>
-                        <p className='card-subtitle'>{item.year} - {item.agency} development</p>
-                        <p className='card-text'>{item.tags}</p>
-                      </div>
-                    </a>
-                  </div>
-                )
-              })}
+              return (
+                <div key={item.id} className="card-flip col col-sm-4 px-0">
+                  <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
+                    <div className='card-front'>
+                      <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
+                      <img src={`images/${item.imgdir}/desktop.jpg`}/>
+                      <div className='card-footer'>{item.name}</div>
+                    </div>
+                    <div className='card-back card-block'>
+                      <h4 className='card-title'>{item.name}</h4>
+                      <p className='card-subtitle'>{item.year} - {item.agency} development</p>
+                      <p className='card-text'>{item.tags}</p>
+                    </div>
+                  </a>
+                </div>
+              )
+            })}
           </section>
         </div>
       </div>
