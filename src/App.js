@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 import { Container } from 'reactstrap';
 
-import reducers from './reducers';
+//import reducers from './reducers';
 import TopNavbar from './components/navbar';
 import HomeLayout from './templates/homelayout';
 //import PostsLayout from './templates/postslayout';
@@ -19,13 +19,11 @@ class App extends Component {
     return (
       <Container>
         <TopNavbar />
-        <Provider store={createStoreWithMiddleware(reducers)}>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/' component={HomeLayout} />
-            </Switch>
-          </BrowserRouter>
-        </Provider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path='/' component={HomeLayout} />
+          </Switch>
+        </BrowserRouter>
       </Container>
     );
   }
