@@ -11,6 +11,7 @@ class HomeLayout extends Component {
       colour: '',
       imgdir: '',
       tags: '',
+      tagsList: [''],
       year: '',
       items: []
     }
@@ -48,6 +49,7 @@ class HomeLayout extends Component {
     itemsRef.on('value', (snapshot) => {
       let items = snapshot.val();
       let newState = [];
+      let tagsList = [];
       for (let item in items) {
         newState.push({
           id:     item,
@@ -58,6 +60,10 @@ class HomeLayout extends Component {
           colour: items[item].colour,
           tags:   items[item].tags
         });
+        let itemTags = items[item].tags.split(', ');
+        this.setState( {
+          tagsList: Array.from(new Set(this.state.tagsList.concat(itemTags)))
+        } );
       }
       this.setState({
         items: newState
@@ -69,7 +75,9 @@ class HomeLayout extends Component {
     itemRef.remove();
   }
   render() {
-    let tagsList = [];
+//    let tagsList = [];
+//    tagsList = [].concat(...tagsList);
+//    console.log(tagsList);
     return (
       <div className='app'>
         <header>
@@ -89,20 +97,12 @@ class HomeLayout extends Component {
               <button>Add Item</button>
             </form>
           </section>
+          <div>{this.state.tagsList}{console.log(this.state.tagsList)}</div>
           <section className='row'>
-            <p>{
-                tagsList = _.concat(tagsList),
-                tagsList = _.union(tagsList),
-//                tagsList = [ ...new Set(tagsList) ],
-                console.log(tagsList),
-                tagsList
-                }</p>
+
               {this.state.items.map((item) => {
-
-                let itemTags = item.tags.split(', ');
-                tagsList.push(itemTags);
-
-
+//                let itemTags = item.tags.split(', ');
+//                tagsList.push(itemTags);
 
                 return (
                   <div key={item.id} className="card-flip col col-sm-4 px-0">
