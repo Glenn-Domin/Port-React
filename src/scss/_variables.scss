@@ -721,11 +721,11 @@ $card-link-hover-color:    $white !default;
 
 $card-img-overlay-padding: 1.25rem !default;
 
-$card-deck-margin:          0;
+$card-deck-margin:          ($grid-gutter-width-base / 2) !default;
 
 $card-columns-count:        3 !default;
-$card-columns-gap:          0;
-$card-columns-margin:       0;
+$card-columns-gap:          1.25rem !default;
+$card-columns-margin:       $grid-gutter-width-base;
 
 // Cards - Custom
 $card-title-sm-spacer-x:       $card-spacer-x;

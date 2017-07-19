@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import firebase from '../actions/firebase';
-//import _ from 'lodash';
 
 class HomeLayout extends Component {
   constructor() {
@@ -11,7 +10,7 @@ class HomeLayout extends Component {
       colour: '',
       imgdir: '',
       tags: '',
-      tagsList: [],
+      tagsList: ['All'],
       year: '',
       items: []
     }
@@ -58,7 +57,7 @@ class HomeLayout extends Component {
           year:   items[item].year,
           imgdir: items[item].imgdir,
           colour: items[item].colour,
-          tags:   items[item].tags
+          tags:   items[item].tags.split(',')
         });
         let itemTags = items[item].tags.split(', ');
         this.setState( {
@@ -76,10 +75,12 @@ class HomeLayout extends Component {
   }
   render() {
 
+
+
     let tagsList = this.state.tagsList.map(tagsItem =>
-    <div key={tagsItem.id} className="station">
+    <button key={tagsItem} className="btn btn-primary">
       {tagsItem}
-    </div>
+    </button>
 );
 //    tagsList = [].concat(...tagsList);
 //    console.log(tagsList);
@@ -102,16 +103,14 @@ class HomeLayout extends Component {
               <button>Add Item</button>
             </form>
           </section>
-          <div>{
-              tagsList
-            }{console.log(this.state.tagsList)}</div>
+          <div>{tagsList}</div>
           <section className='row'>
             {this.state.items.map((item) => {
 //                let itemTags = item.tags.split(', ');
 //                tagsList.push(itemTags);
 
               return (
-                <div key={item.id} className="card-flip col col-sm-4 px-0">
+                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-flip col col-sm-4' >
                   <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
