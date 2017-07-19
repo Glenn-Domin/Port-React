@@ -38,3 +38,49 @@
     }
   }
 }
+
+.card-slide {
+  margin-bottom: $card-columns-margin;
+
+  .card-slide-inner {
+    text-align: center;
+    overflow: hidden;
+
+    .card-front {
+      transition: transform 0.35s;
+
+      img {
+        max-width: 100%;
+      }
+
+      .card-footer {
+        font-weight: 400;
+        transform: scale(0.75);
+        transition: transform 0.35s;
+      }
+    }
+
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 100%;
+      left: 0;
+      transition: transform 0.35s;
+    }
+
+    &:hover {
+      .card-front {
+        transform: translateY(calc(-100% + 50px));
+      }
+
+      .card-footer {
+        transform: scale(1);
+      }
+
+      .card-back {
+        @extend .card-front;
+      }
+    }
+  }
+}

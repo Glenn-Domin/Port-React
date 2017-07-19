@@ -110,15 +110,14 @@ class HomeLayout extends Component {
 //                tagsList.push(itemTags);
 
               return (
-                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-flip col col-sm-4' >
-                  <a className='card-flip-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
+                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col col-sm-4' >
+                  <a className='card-slide-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
                       <img src={`images/${item.imgdir}/desktop.jpg`}/>
-                      <div className='card-footer'>{item.name}</div>
+                      <h4 className='card-footer mb-0'>{item.name}</h4>
                     </div>
                     <div className='card-back card-block'>
-                      <h4 className='card-title'>{item.name}</h4>
                       <p className='card-subtitle'>{item.year} - {item.agency} development</p>
                       <p className='card-text'>{item.tags}</p>
                     </div>
