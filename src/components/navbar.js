@@ -17,9 +17,9 @@ class TopNavbar extends Component {
   }
   render() {
     return (
-      <Navbar color="faded" light toggleable>
+      <Navbar toggleable>
         <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand href="/">Glenn Domin</NavbarBrand>
+        <NavbarBrand href="/" style={{ display: 'none' }}>Glenn Domin</NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>

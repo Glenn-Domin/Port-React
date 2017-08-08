@@ -95,9 +95,9 @@
 $white:  #fff !default;
 $black:  #000 !default;
 $red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
+$orange: #ff7f26;
+$yellow: #FFB226;
+$green:  #18A08D;
 $blue:   #0275d8 !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
@@ -111,7 +111,9 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             $orange;
+$brand-secondary:           $yellow;
+$brand-tertiary:            $green;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -181,10 +183,10 @@ $sizes: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
-$body-color:    $gray-dark !default;
-$inverse-bg:    $gray-dark !default;
-$inverse-color: $gray-lighter !default;
+$body-bg:       $gray-dark;
+$body-color:    $white;
+$inverse-bg:    $white;
+$inverse-color: $gray-dark;
 
 
 // Links

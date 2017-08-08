@@ -40,23 +40,43 @@
 }
 
 .card-slide {
-  margin-bottom: $card-columns-margin;
+  border: 1px solid $gray-dark;
 
   .card-slide-inner {
     text-align: center;
     overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 0;
+      height: 1px;
+      box-sizing: border-box;
+      transition: width 0.35s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 0;
+      height: 1px;
+      box-sizing: border-box;
+      transition: width 0.35s;
+    }
 
     .card-front {
       transition: transform 0.35s;
 
       img {
         max-width: 100%;
-      }
-
-      .card-footer {
-        font-weight: 400;
-        transform: scale(0.75);
-        transition: transform 0.35s;
       }
     }
 
@@ -66,20 +86,91 @@
       height: 100%;
       top: 100%;
       left: 0;
+      transform: translateY(-50px);
       transition: transform 0.35s;
+      background-color: inherit;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 1px;
+        height: 0;
+        box-sizing: border-box;
+        transition: height 0.35s;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 1px;
+        height: 0;
+        box-sizing: border-box;
+        transition: height 0.35s;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        font-weight: 400;
+        transform: scale(0.75);
+        transition: all 0.5s;
+      }
+
+      .card-subtitle {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+      }
+
+      .card-text {
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+      }
     }
 
     &:hover {
-      .card-front {
-        transform: translateY(calc(-100% + 50px));
+
+      &::before,  &::after {
+        width: calc(100% - 40px);
+        transition: width 0.5s 0.35s;
       }
 
-      .card-footer {
+      .card-front {
+        transform: translateY(-100%);
+      }
+
+      .card-title {
         transform: scale(1);
+        top: 25%;
+      }
+
+      .card-subtitle {
+        top: 45%;
+      }
+
+      .card-text {
+        top: 55%;
       }
 
       .card-back {
         @extend .card-front;
+
+        &::before, &::after {
+          height: calc(100% - 40px);
+        }
       }
     }
   }

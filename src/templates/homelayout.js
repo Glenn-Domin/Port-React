@@ -87,12 +87,13 @@ class HomeLayout extends Component {
     return (
       <div className='app'>
         <header>
-            <div className="wrapper">
-              <h1>Portfolio</h1>
+            <div className="wrapper text-center my-5">
+              <h1>Glenn Domin</h1>
+              <h2>Front-End Developer</h2>
             </div>
         </header>
-        <div className='container'>
-          <section className='add-item'>
+        <div className='container-fluid px-0'>
+          <section className='add-item' style={{ display: 'none' }}>
             <form onSubmit={this.handleSubmit}>
               <input type="text" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} />
               <input type="text" name="agency" placeholder="Agency" onChange={this.handleChange} value={this.state.agency} />
@@ -103,8 +104,8 @@ class HomeLayout extends Component {
               <button>Add Item</button>
             </form>
           </section>
-          <div>{tagsList}</div>
-          <section className='row'>
+          <div style={{ display: 'none' }}>{tagsList}</div>
+          <section className='row no-gutters'>
             {this.state.items.map((item) => {
 //                let itemTags = item.tags.split(', ');
 //                tagsList.push(itemTags);
@@ -115,9 +116,9 @@ class HomeLayout extends Component {
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
                       <img src={`images/${item.imgdir}/desktop.jpg`}/>
-                      <h4 className='card-footer mb-0'>{item.name}</h4>
                     </div>
                     <div className='card-back card-block'>
+                      <h4 className='card-title mb-0'>{item.name}</h4>
                       <p className='card-subtitle'>{item.year} - {item.agency} development</p>
                       <p className='card-text'>{item.tags}</p>
                     </div>

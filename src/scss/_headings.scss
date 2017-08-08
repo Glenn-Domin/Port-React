@@ -1,0 +1,22 @@
+header {
+  h1 {
+    color: $brand-primary;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: $brand-secondary;
+      margin: 25px auto;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: $brand-tertiary;
+    font-weight: 400;
+  }
+}

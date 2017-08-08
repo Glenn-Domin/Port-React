@@ -17,14 +17,14 @@ import HomeLayout from './templates/homelayout';
 class App extends Component {
   render() {
     return (
-      <Container>
+      <div>
         <TopNavbar />
         <BrowserRouter>
           <Switch>
             <Route exact path='/' component={HomeLayout} />
           </Switch>
         </BrowserRouter>
-      </Container>
+      </div>
     );
   }
 }
