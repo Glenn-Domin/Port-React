@@ -60,8 +60,9 @@ class HomeLayout extends Component {
           tags:   items[item].tags.split(',')
         });
         let itemTags = items[item].tags.split(', ');
+        itemTags = Array.from(new Set(this.state.tagsList.concat(itemTags)));
         this.setState( {
-          tagsList: Array.from(new Set(this.state.tagsList.concat(itemTags)))
+          tagsList: itemTags
         } );
       }
       this.setState({
@@ -109,6 +110,10 @@ class HomeLayout extends Component {
             {this.state.items.map((item) => {
 //                let itemTags = item.tags.split(', ');
 //                tagsList.push(itemTags);
+              let tagsSpanned = Array();
+              for (var tag of item.tags) {
+                tagsSpanned.push(<span>{tag.trim()}</span>);
+              }
 
               return (
                 <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col col-sm-4' >
@@ -120,7 +125,7 @@ class HomeLayout extends Component {
                     <div className='card-back card-block'>
                       <h4 className='card-title mb-0'>{item.name}</h4>
                       <p className='card-subtitle'>{item.year} - {item.agency} development</p>
-                      <p className='card-text'>{item.tags}</p>
+                      <p className='card-text'>{tagsSpanned}</p>
                     </div>
                   </a>
                 </div>
