@@ -1,0 +1,16 @@
+#root {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRBAMAAABYoVcFAAAAD1BMVEX///////////////////+Rd1MVAAAABHRSTlMrUm9tev7e9gAAAEtJREFUSMdjEMQCFLGICTAIMDAyoBMKWMQGWOWoj0Z9NOqjUR+N+mhAfORAoUolTODi4owpqECp7SM4jkZ9NOqjUR+N+mjUR1T0EQAHI1zWY/yIpAAAAABJRU5ErkJggg==);
+    background-attachment: fixed;
+    opacity: 0.15;
+  }
+}

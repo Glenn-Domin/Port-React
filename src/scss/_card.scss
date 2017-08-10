@@ -40,7 +40,7 @@
 }
 
 .card-slide {
-  border: 1px solid $gray-dark;
+  border: 1px solid transparent;
 
   .card-slide-inner {
     text-align: center;
@@ -120,6 +120,7 @@
         left: 0;
         right: 0;
         font-weight: 400;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
         transform: scale(0.75);
         transition: all 0.5s;
       }
@@ -129,6 +130,7 @@
         top: 25%;
         left: 0;
         right: 0;
+        color: rgba($white, 0.85);
         transition: all 0.5s;
       }
 
@@ -137,6 +139,7 @@
         top: 45%;
         left: 0;
         right: 0;
+        color: rgba($white, 0.85);
         transition: all 0.5s;
       }
     }
