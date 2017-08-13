@@ -8,6 +8,8 @@ import { Container } from 'reactstrap';
 //import reducers from './reducers';
 import TopNavbar from './components/navbar';
 import HomeLayout from './templates/homelayout';
+import AboutLayout from './templates/aboutlayout';
+import ProficienciesLayout from './templates/proficiencieslayout';
 //import PostsLayout from './templates/postslayout';
 //import PostsNew from './components/posts_new';
 //import PostsShow from './components/posts_show';
@@ -22,6 +24,8 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact path='/' component={HomeLayout} />
+            <Route exact path='/about' component={AboutLayout} />
+            <Route exact path='/proficiencies' component={ProficienciesLayout} />
           </Switch>
         </BrowserRouter>
       </div>

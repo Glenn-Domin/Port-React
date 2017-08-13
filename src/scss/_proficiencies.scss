@@ -1,0 +1,290 @@
+.proficiencies-radial {
+  text-align: center;
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 0 20px 20px;
+  color: #999;
+  font-size: 20px;
+  text-align: center;
+  box-sizing: content-box;
+
+  figcaption {
+    display: inline-block;
+    width: 150px;
+    height: 0px;
+    padding: 75px 0;
+    border: 20px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    line-height: 210px;
+    overflow: hidden;
+    transition: line-height 0.3s;
+
+    &::after {
+      content: '';
+      border: 20px #222 solid;
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      top: -20px;
+      left: -20px;
+      border-radius: 50%;
+      z-index: 3;
+      transition: transform 0.3s;
+    }
+  }
+
+  &:hover {
+    figcaption {
+      line-height: 10px;
+      color: $brand-primary;
+
+      &::after {
+        transform: scale(0.88);
+      }
+    }
+
+    .fa {
+      opacity: 0;
+      transform: scale(1.5);
+
+      &.svg {
+        transform: translateY(-50%) scale(1.5);
+      }
+    }
+  }
+
+  .fa {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    line-height: 0;
+    width: 100%;
+    font-size: 65px;
+    transition: transform 0.3s, opacity 0.3s;
+
+    &.svg {
+      width: 35%;
+      right: 0;
+      margin: auto;
+      transform: translateY(-50%);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &[data-percent='100'] .outer {
+    stroke-dashoffset: 0;
+    -webkit-animation: show100 2s;
+    animation: show100 2s;
+  }
+
+  &[data-percent='95'] .outer {
+    stroke-dashoffset: 27;
+    -webkit-animation: show95 2s;
+    animation: show95 2s;
+  }
+
+  &[data-percent='90'] .outer {
+    stroke-dashoffset: 54;
+    -webkit-animation: show90 2s;
+    animation: show90 2s;
+  }
+
+  &[data-percent='80'] .outer {
+    stroke-dashoffset: 107;
+    -webkit-animation: show80 2s;
+    animation: show80 2s;
+  }
+
+  &[data-percent='45'] .outer {
+    stroke-dashoffset: 294;
+    -webkit-animation: show45 2s;
+    animation: show45 2s;
+  }
+}
+
+.joomla {
+  color: #e52626;
+
+  .outer {
+    stroke: #e52626;
+  }
+}
+
+.css3 {
+  color: #1572b6;
+
+  .outer {
+    stroke: #1572b6;
+  }
+}
+
+.html5 {
+  color: #e34f26;
+
+  .outer {
+    stroke: #e34f26;
+  }
+}
+
+.email {
+  color: #A2133C;
+
+  .outer {
+    stroke: #A2133C;
+  }
+}
+
+.bootstrap {
+  color: #563d7c;
+
+  .outer {
+    stroke: #563d7c;
+  }
+}
+
+.sass {
+  color: #cf649a;
+
+  .outer {
+    stroke: #cf649a;
+  }
+}
+
+.wordpress {
+  /* color: #464646; */
+  color: #fff;
+
+  .outer {
+    stroke: #fff;
+  }
+}
+
+.drupal {
+  color: #00598f;
+
+  .outer {
+    stroke: #00598f;
+  }
+}
+
+.outer {
+  fill: transparent;
+  stroke: #333;
+  stroke-width: 20;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+
+  /* firefox bug fix - won't rotate at 90deg angles */
+  -moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+/* Keyframes for the initial animation */
+@-webkit-keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes show95 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 27;
+  }
+}
+
+@keyframes show95 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 27;
+  }
+}
+
+
+@-webkit-keyframes show90 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 54;
+  }
+}
+
+@keyframes show90 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 54;
+  }
+}
+
+@-webkit-keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 107;
+  }
+}
+
+@keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 107;
+  }
+}
+
+@-webkit-keyframes show45 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 294;
+  }
+}
+
+@keyframes show45 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 294;
+  }
+}
