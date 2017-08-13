@@ -26,7 +26,10 @@ class TopNavbar extends Component {
               <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/posts/">Posts</NavLink>
+              <NavLink href="/about/">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/proficiencies/">Proficiencies</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
