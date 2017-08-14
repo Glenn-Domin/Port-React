@@ -11,10 +11,10 @@ class AboutLayout extends Component {
         </header>
         <div className='container'>
           <section className='row no-gutters'>
-            <p>I've been a Front-End Developer (and Joomla Developer, and WordPress Developer) in an agency for four years. Prior to that I've done freelance work, as well as creating websites for businesses I've worked at in other capacities.</p>
-            <p>I've attempted to be a bit of an all-rounder, gaining exposure in as many facets of web development as I can. Having said that, I've also managed to also specialise in a few key areas:</p>
+            <p>I've been a Front-End Developer (and Joomla Developer, and WordPress Developer) in an agency for five years. Prior to that I've done freelance work, as well as creating websites for businesses I've worked at in other capacities.</p>
+            <p>I've attempted to be a bit of an all-rounder, gaining exposure in as many facets of web development as I can. Having said that, I've also managed to specialise in a few key areas:</p>
             <ul>
-              <li>Standards-compliant Front-End Development (Bootstrap, SASS, GitHub)</li>
+              <li>Standards-compliant Front-End Development (Bootstrap, SASS, GitHub, etc)</li>
               <li>Joomla/WordPress site development</li>
               <li>HTML EDM template creation</li>
               <li>Tricky CSS problems</li>
