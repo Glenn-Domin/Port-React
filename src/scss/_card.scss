@@ -1,3 +1,6 @@
+$tag-width : 2px;
+$tag-color : rgba($white, 0.85);
+
 .card-flip {
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -157,7 +160,14 @@
 
       .card-title {
         transform: scale(1);
-        top: 25%;
+        top: calc(50% - 4.5vw);
+
+        @media (min-width: 1300px) {
+          top: calc(50% - 4vw);
+        }
+        @media (min-width: 1800px) {
+          top: calc(50% - 3vw);
+        }
       }
 
       .card-subtitle {
@@ -165,7 +175,14 @@
       }
 
       .card-text {
-        top: 55%;
+        top: calc(50% + 1.5vw);
+
+        @media (min-width: 1300px) {
+          top: calc(50% + 1vw);
+        }
+        @media (min-width: 1800px) {
+          top: calc(50% + 0.5vw);
+        }
       }
 
       .card-back {
@@ -174,6 +191,83 @@
         &::before, &::after {
           height: calc(100% - 40px);
         }
+      }
+    }
+  }
+}
+
+// tag hovers
+.card-text > span {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: default;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $tag-width;
+    height: 100%;
+    background-color: $tag-color;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: transform 0.3s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $tag-width;
+    height: 100%;
+    background-color: $tag-color;
+    transform: scaleY(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+
+  span {
+    display: inline-block;
+    padding: 3px 12px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $tag-width;
+      background-color: $tag-color;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: $tag-width;
+      background-color: $tag-color;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s;
+    }
+  }
+
+  &:hover {
+    &::before, &::after {
+      transform: scaleY(1);
+    }
+
+    span {
+      &::before, &::after {
+        transform: scaleX(1);
       }
     }
   }

@@ -112,7 +112,7 @@ class HomeLayout extends Component {
 //                tagsList.push(itemTags);
               let tagsSpanned = Array();
               for (var tag of item.tags) {
-                tagsSpanned.push(<span>{tag.trim()}</span>);
+                tagsSpanned.push(<span><span>{tag.trim()}</span></span>);
               }
 
               return (
