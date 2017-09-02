@@ -9,6 +9,7 @@ import { Container } from 'reactstrap';
 import TopNavbar from './components/navbar';
 import HomeLayout from './templates/homelayout';
 import AboutLayout from './templates/aboutlayout';
+import ContactLayout from './templates/contactlayout';
 import ProficienciesLayout from './templates/proficiencieslayout';
 //import PostsLayout from './templates/postslayout';
 //import PostsNew from './components/posts_new';
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path='/' component={HomeLayout} />
             <Route exact path='/about' component={AboutLayout} />
             <Route exact path='/proficiencies' component={ProficienciesLayout} />
+            <Route exact path='/contact' component={ContactLayout} />
           </Switch>
         </BrowserRouter>
       </div>

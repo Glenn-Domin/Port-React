@@ -31,6 +31,9 @@ class TopNavbar extends Component {
             <NavItem>
               <NavLink href="/proficiencies/">Proficiencies</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/contact/">Contact</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

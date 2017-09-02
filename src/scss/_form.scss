@@ -1,0 +1,23 @@
+.form-control {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: none;
+  background-color: #FFB226;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.4);
+  font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.2s,box-shadow 0.2s,top 0.2s,left 0.2s;
+
+  &:focus {
+    background-color: #18A08D;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+    top: 4px;
+    left: 4px;
+    outline: none;
+    transition: background-color 0.2s,box-shadow 0.2s,top 0.2s,left 0.2s;
+  }
+}

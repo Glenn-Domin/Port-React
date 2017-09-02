@@ -1,7 +1,10 @@
 @import 'variables.scss';
+
+
+@import '~bootstrap/scss/bootstrap.scss';
+
 @import 'layout.scss';
 @import 'card.scss';
 @import 'headings.scss';
 @import 'proficiencies.scss';
-
-@import '~bootstrap/scss/bootstrap.scss';
+@import 'form.scss';
