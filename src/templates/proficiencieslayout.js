@@ -6,7 +6,7 @@ class ProficienciesLayout extends Component {
     return (
       <div className='app'>
         <header>
-          <div className="wrapper text-center my-5">
+          <div className="wrapper text-center my-5 px-3">
             <h1>My Proficiencies</h1>
             <h2>So what am I good at anyway?</h2>
           </div>
@@ -91,6 +91,7 @@ class ProficienciesLayout extends Component {
                 <li><strong>React JS</strong>: I'm relatively new to React JS but am learning quickly. This portfolio is built from scratch using React JS!</li>
                 <li><strong>JavaScript / jQuery</strong>: Have done plenty with this - very comfortable with it.</li> <li><strong>Vision6 / MailChimp</strong>: I've done many email templates in these - they always turn out great.</li>
                 <li><b>SQL</b>: Sometimes a CMS doesn't give you everything you need and you have to go straight to the database - I've had quite a bit of experience with this.</li>
+                <li><b>Node / Gulp</b>: I've been using Node and Gulp in my projects. Ideally, using Webpack would render Gulp redundant, and Yarn is meant to be better than Node, but am yet to flesh those out thoroughly.</li>
                 <li><strong>BigCommerce</strong>: Have had a couple of clients in this.</li>
                 <li><strong>SquareSpace</strong>: Have had a couple of clients in this too.</li>
                 <li>and I've dabbled a little with <strong>SVGs</strong>. I can build a <strong>custom font</strong> with SVG elements.</li>

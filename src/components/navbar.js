@@ -19,23 +19,21 @@ class TopNavbar extends Component {
     return (
       <Navbar toggleable>
         <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand href="/" style={{ display: 'none' }}>Glenn Domin</NavbarBrand>
-        <Collapse isOpen={this.state.isOpen} navbar>
+          <NavbarBrand href="/" style={{ display: 'none' }}>Glenn Domin</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/"><span data-hover="Home">Home</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/about/">About</NavLink>
+              <NavLink href="/about/"><span data-hover="About">About</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/proficiencies/">Proficiencies</NavLink>
+              <NavLink href="/proficiencies/"><span data-hover="Proficiencies">Proficiencies</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact/">Contact</NavLink>
+              <NavLink href="/contact/"><span data-hover="Contact">Contact</span></NavLink>
             </NavItem>
           </Nav>
-        </Collapse>
       </Navbar>
     );
   }

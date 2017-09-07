@@ -17,7 +17,7 @@ class ContactLayout extends Component {
     return (
       <div className='app'>
         <header>
-          <div className="wrapper text-center my-5">
+          <div className="wrapper text-center my-5 px-3">
             <h1>Contact Me</h1>
             <h2>I'm happy to hear from you!</h2>
           </div>

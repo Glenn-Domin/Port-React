@@ -88,7 +88,7 @@ class HomeLayout extends Component {
     return (
       <div className='app'>
         <header>
-            <div className="wrapper text-center my-5">
+            <div className="wrapper text-center my-5 px-3">
               <h1>Glenn Domin</h1>
               <h2>Front-End Developer</h2>
             </div>
@@ -116,7 +116,7 @@ class HomeLayout extends Component {
               }
 
               return (
-                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col col-sm-4' >
+                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col-12 col-sm-6 col-md-4' >
                   <a className='card-slide-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>

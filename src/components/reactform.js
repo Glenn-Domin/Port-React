@@ -61,14 +61,13 @@ class ReactForm extends React.Component {
       email: '',
       agency: '',
       message: '',
-      submitted: <div className="alert alert-success" role="alert"><strong>Thanks!</strong> I'll get back to you shortly.</div>
+      submitted: <div className="col-12 mt-3"><div className="alert alert-success" role="alert"><strong>Thanks!</strong> I'll get back to you shortly.</div></div>
     });
   }
 
   render() {
     return(
       <form className='react-form row' onSubmit={this.handleSubmit}>
-        <h1 className='col-12'>Say Hi!</h1>
 
         <div className='col-12 col-md-6'>
           <fieldset className='form-group'>
@@ -96,7 +95,7 @@ class ReactForm extends React.Component {
 
         <div className='col-12 col-md-6'>
           <div className='form-group'>
-            <input id='formButton' className='btn' type='submit' placeholder='Send message' />
+            <input id='formButton' className='submit btn btn-primary' type='submit' value='Send message' />
           </div>
         </div>
         {this.state.submitted}

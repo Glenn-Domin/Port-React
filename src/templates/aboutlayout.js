@@ -5,7 +5,7 @@ class AboutLayout extends Component {
     return (
       <div className='app'>
         <header>
-          <div className="wrapper text-center my-5">
+          <div className="wrapper text-center my-5 px-3">
             <h1>About Me</h1>
           </div>
         </header>
