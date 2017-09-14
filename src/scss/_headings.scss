@@ -3,6 +3,10 @@ header {
     color: $brand-primary;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
 
+    @media (max-width: 500px) {
+      font-size: 2.25rem;
+    }
+
     &::after {
       content: '';
       display: block;
@@ -17,5 +21,9 @@ header {
     color: $brand-tertiary;
     font-weight: 400;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 500px) {
+      font-size: 1.75rem;
+    }
   }
 }

@@ -93,6 +93,49 @@ class HomeLayout extends Component {
               <h2>Front-End Developer</h2>
             </div>
         </header>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='card card-inverse card-outline-primary container mb-5'>
+                <div className='card-block row'>
+                  <p className='lead col-12'>My award winning websites while working at iFactory from Interactive Media Awards:</p>
+                  <div className='col-12 col-lg-4'>
+                    <ul>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=763812&cat=1'  target='_blank'>Toyota Tsusho South Pacific Holdings</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=764043&cat=1'  target='_blank'>Vivir Healthcare</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=508179&cat=1'  target='_blank'>Veracity</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=648522&cat=1'  target='_blank'>Noosa Radiology</a></li>
+                    </ul>
+                  </div>
+                  <div className='col-12 col-lg-4'>
+                    <ul>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311892&cat=1'  target='_blank'>Queensland Regional Training Networks</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311899&cat=1'  target='_blank'>Drake Collectibles</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311885&cat=1'  target='_blank'>Site Group International Limited</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=290625&cat=1'  target='_blank'>Coevolve</a></li>
+                    </ul>
+                  </div>
+                  <div className='col-12 col-lg-4'>
+                    <ul>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=648515&cat=1'  target='_blank'>Starflight Australia</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=291836&cat=1'  target='_blank'>Pelofy</a></li>
+                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=764092&cat=1'  target='_blank'>Prescare</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12 mb-5 text-center'>
+              <h3>Here's an assortment of sites I've worked on...</h3>
+            </div>
+          </div>
+        </div>
+
         <div className='container-fluid px-0'>
           <section className='add-item' style={{ display: 'none' }}>
             <form onSubmit={this.handleSubmit}>
@@ -116,7 +159,7 @@ class HomeLayout extends Component {
               }
 
               return (
-                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col-12 col-sm-6 col-md-4' >
+                <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col-12 col-md-6 col-lg-4' >
                   <a className='card-slide-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>

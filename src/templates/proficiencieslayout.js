@@ -88,6 +88,7 @@ class ProficienciesLayout extends Component {
               <ul>
                 <li><strong>Site Optimisation</strong>: I can get a little obsessed with this when left to my own devices... I have many tools in my tool belt for this...</li>
                 <li><strong>PHP</strong>: I do well with PHP - most of what I do in a day is in PHP.</li>
+                <li><strong>Version Control</strong>: All of my projects are in Git.</li>
                 <li><strong>React JS</strong>: I'm relatively new to React JS but am learning quickly. This portfolio is built from scratch using React JS!</li>
                 <li><strong>JavaScript / jQuery</strong>: Have done plenty with this - very comfortable with it.</li> <li><strong>Vision6 / MailChimp</strong>: I've done many email templates in these - they always turn out great.</li>
                 <li><b>SQL</b>: Sometimes a CMS doesn't give you everything you need and you have to go straight to the database - I've had quite a bit of experience with this.</li>
