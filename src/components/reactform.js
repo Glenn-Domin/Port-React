@@ -20,7 +20,7 @@ class ReactForm extends React.Component {
   handleChange = (e) => {
     let newState = {};
 
-    if(e.target.type == "checkbox") {
+    if(e.target.type === "checkbox") {
       newState[e.target.name] = e.target.checked;
     } else {
       newState[e.target.name] = e.target.value;
