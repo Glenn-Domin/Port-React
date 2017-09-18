@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../actions/firebase';
+//import firebase from '../actions/firebase';
 
 import ReactForm from '../components/reactform';
 

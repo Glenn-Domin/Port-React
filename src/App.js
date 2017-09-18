@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //import promise from 'redux-promise';
-import { Container } from 'reactstrap';
+//import { Container } from 'reactstrap';
 
 //import reducers from './reducers';
 import TopNavbar from './components/navbar';

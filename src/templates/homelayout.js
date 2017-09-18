@@ -10,7 +10,6 @@ class HomeLayout extends Component {
       colour: '',
       imgdir: '',
       tags: '',
-      tagsList: ['All'],
       year: '',
       items: []
     }
@@ -48,7 +47,7 @@ class HomeLayout extends Component {
     itemsRef.on('value', (snapshot) => {
       let items = snapshot.val();
       let newState = [];
-      let tagsList = [];
+//      let tagsList = [];
       for (let item in items) {
         newState.push({
           id:     item,
@@ -59,11 +58,11 @@ class HomeLayout extends Component {
           colour: items[item].colour,
           tags:   items[item].tags.split(',')
         });
-        let itemTags = items[item].tags.split(', ');
-        itemTags = Array.from(new Set(this.state.tagsList.concat(itemTags)));
-        this.setState( {
+//        let itemTags = items[item].tags.split(', ');
+//        itemTags = Array.from(new Set(this.state.tagsList.concat(itemTags)));
+        /*this.setState( {
           tagsList: itemTags
-        } );
+        } );*/
       }
       this.setState({
         items: newState
@@ -78,11 +77,11 @@ class HomeLayout extends Component {
 
 
 
-    let tagsList = this.state.tagsList.map(tagsItem =>
+    /*let tagsList = this.state.tagsList.map(tagsItem =>
     <button key={tagsItem} className="btn btn-primary">
       {tagsItem}
     </button>
-);
+);*/
 //    tagsList = [].concat(...tagsList);
 //    console.log(tagsList);
     return (
@@ -98,28 +97,28 @@ class HomeLayout extends Component {
             <div className='col-12'>
               <div className='card card-inverse card-outline-primary container mb-5'>
                 <div className='card-block row'>
-                  <p className='lead col-12'>My award winning websites while working at iFactory from Interactive Media Awards:</p>
+                  <p className='lead col-12'>Award winning sites from Interactive Media Awards I've worked on while at iFactory:</p>
                   <div className='col-12 col-lg-4'>
                     <ul>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=763812&cat=1'  target='_blank'>Toyota Tsusho South Pacific Holdings</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=764043&cat=1'  target='_blank'>Vivir Healthcare</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=508179&cat=1'  target='_blank'>Veracity</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=648522&cat=1'  target='_blank'>Noosa Radiology</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=763812&cat=1'  target='_blank'>Toyota Tsusho South Pacific Holdings</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=764043&cat=1'  target='_blank'>Vivir Healthcare</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=508179&cat=1'  target='_blank'>Veracity</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=648522&cat=1'  target='_blank'>Noosa Radiology</a></li>
                     </ul>
                   </div>
                   <div className='col-12 col-lg-4'>
                     <ul>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311892&cat=1'  target='_blank'>Queensland Regional Training Networks</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311899&cat=1'  target='_blank'>Drake Collectibles</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=311885&cat=1'  target='_blank'>Site Group International Limited</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=290625&cat=1'  target='_blank'>Coevolve</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=311892&cat=1'  target='_blank'>Queensland Regional Training Networks</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=311899&cat=1'  target='_blank'>Drake Collectibles</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=311885&cat=1'  target='_blank'>Site Group International Limited</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=290625&cat=1'  target='_blank'>Coevolve</a></li>
                     </ul>
                   </div>
                   <div className='col-12 col-lg-4'>
                     <ul>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=648515&cat=1'  target='_blank'>Starflight Australia</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=291836&cat=1'  target='_blank'>Pelofy</a></li>
-                    <li><a href='http://interactivemediaawards.com/winners/certificate.asp?param=764092&cat=1'  target='_blank'>Prescare</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=648515&cat=1'  target='_blank'>Starflight Australia</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=291836&cat=1'  target='_blank'>Pelofy</a></li>
+                    <li><a rel='noopener noreferrer' href='http://interactivemediaawards.com/winners/certificate.asp?param=764092&cat=1'  target='_blank'>Prescare</a></li>
                     </ul>
                   </div>
                 </div>
@@ -148,22 +147,21 @@ class HomeLayout extends Component {
               <button>Add Item</button>
             </form>
           </section>
-          <div style={{ display: 'none' }}>{tagsList}</div>
           <section className='row no-gutters'>
             {this.state.items.map((item) => {
 //                let itemTags = item.tags.split(', ');
 //                tagsList.push(itemTags);
-              let tagsSpanned = Array();
+              let tagsSpanned = [];
               for (var tag of item.tags) {
                 tagsSpanned.push(<span><span>{tag.trim()}</span></span>);
               }
 
               return (
                 <div key={item.id} id={`${item.tags}`.replace(" ", "-").replace(",", "")} className='card-slide col-12 col-md-6 col-lg-4' >
-                  <a className='card-slide-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
+                  <a rel='noopener noreferrer' className='card-slide-inner card card-inverse' style={{ backgroundColor: `${item.colour}` }}>
                     <div className='card-front'>
                       <button onClick={() => this.removeItem(item.name)} style={{ display: 'none' }}>Remove Item</button>
-                      <img src={`images/${item.imgdir}/desktop.jpg`}/>
+                      <img alt={item.name} src={`images/${item.imgdir}/desktop.jpg`}/>
                     </div>
                     <div className='card-back card-block'>
                       <h4 className='card-title mb-0'>{item.name}</h4>

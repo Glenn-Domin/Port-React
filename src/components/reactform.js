@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import firebase from '../actions/firebase';
 
-const reactFormContainer = document.querySelector('.react-form-container');
+//const reactFormContainer = document.querySelector('.react-form-container');
 
-class ReactFormLabel extends React.Component {
+/*class ReactFormLabel extends React.Component {
   constructor() {
     super();
   }
@@ -14,7 +14,7 @@ class ReactFormLabel extends React.Component {
       <label htmlFor={this.props.htmlFor}>{this.props.title}</label>
     )
   }
-}
+}*/
 
 class ReactForm extends React.Component {
   constructor() {

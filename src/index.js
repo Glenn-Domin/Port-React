@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 //import './App.css';
 //import './css/style.css';
 import './scss/bootstrap.scss';
+//import './main.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
